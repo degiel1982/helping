@@ -97,8 +97,8 @@ end
 minetest.register_node("mymagic:colored_energy_"..col,{
 	description = "Energy Block",
 	tiles = {{name="mymagic_teleport_ani_"..col..".png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.5}}},
-	paramtype = "light",
-	drawtype = "liquid",
+--	paramtype = "light",
+	drawtype = "normal",
 	post_effect_color = rgb,
 	drop = "",
 	light_source = 14,
@@ -127,7 +127,7 @@ minetest.register_node("mymagic:hole1",{
 			},
 	paramtype = "light",
 	drop = "",
-	groups = {magic_shovel = 1},
+	groups = {magic_shovel = 1, not_in_creative_inventory = 1},
 })
 minetest.register_node("mymagic:hole2",{
 	description = "FakeTeleport Block",
@@ -141,5 +141,5 @@ minetest.register_node("mymagic:hole2",{
 			},
 	paramtype = "light",
 	drop = "",
-	groups = {magic_shovel = 1},
+	groups = {magic_shovel = 1, not_in_creative_inventory = 1},
 })

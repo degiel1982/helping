@@ -155,3 +155,11 @@ if fields["button"] then
 end
 end,
 })
+minetest.register_craft({
+	output = "mymagic:tool_recharge",
+	recipe = {
+			{"default:steel_ingot","mymagic:orb_orange","default:steel_ingot"},
+			{"default:steel_ingot","default:brick","default:steel_ingot"},
+			{"default:steel_ingot","default:steel_ingot","default:steel_ingot"},
+			},
+})

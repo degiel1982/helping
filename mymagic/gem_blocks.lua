@@ -13,7 +13,7 @@ minetest.register_node("mymagic:gem_block_orange",{
 	tiles = {"mymagic_gem_block_orange.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {creative_breakable = 1},
+	groups = {cracky = 1},
 	
 	on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
@@ -42,13 +42,13 @@ minetest.register_node("mymagic:gem_block_orange",{
 			local node = minetest.get_node(pos)
 				gem:take_item()
 				minetest.spawn_item({x=pos.x,y=pos.y+1,z=pos.z}, gem)
-				minetest.set_node(pos,{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+1,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y-1,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y-2,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y-3,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y-4,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y-5,z=pos.z},{name="default:ladder",param2=node.param2})
+				minetest.set_node(pos,{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+1,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y-1,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y-2,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y-3,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y-4,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y-5,z=pos.z},{name="default:ladder",param2=2})
 				parti(pos)
 			
 			end
@@ -61,7 +61,7 @@ minetest.register_node("mymagic:gem_block_green",{
 	tiles = {"mymagic_gem_block_green.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {creative_breakable = 1},
+	groups = {cracky = 1},
 	
 	on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
@@ -90,13 +90,13 @@ minetest.register_node("mymagic:gem_block_green",{
 			local node = minetest.get_node(pos)
 				gem:take_item()
 				minetest.spawn_item({x=pos.x,y=pos.y+1,z=pos.z}, gem)
-				minetest.set_node(pos,{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+1,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+2,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+3,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+4,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+5,z=pos.z},{name="default:ladder",param2=node.param2})
-				minetest.set_node({x=pos.x,y=pos.y+6,z=pos.z},{name="default:ladder",param2=node.param2})
+				minetest.set_node(pos,{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+1,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+2,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+3,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+4,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+5,z=pos.z},{name="default:ladder",param2=2})
+				minetest.set_node({x=pos.x,y=pos.y+6,z=pos.z},{name="default:ladder",param2=2})
 				parti(pos)
 			
 			end
@@ -110,7 +110,7 @@ minetest.register_node("mymagic:gem_block_blue",{
 	tiles = {"mymagic_gem_block_blue.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {creative_breakable = 1},
+	groups = {cracky = 1},
 	
 	on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
@@ -153,7 +153,7 @@ minetest.register_node("mymagic:gem_block_red",{
 	tiles = {"mymagic_gem_block_red.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {creative_breakable = 1},
+	groups = {cracky = 1},
 	
 	on_construct = function(pos)
 	local meta = minetest.get_meta(pos)

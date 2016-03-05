@@ -1,8 +1,8 @@
 local items = {
-	{"Orange Crystal","crystal_orange",10},
-	{"Green Crystal","crystal_green",20},
-	{"Blue Crystal","crystal_blue",30},
-	{"Red Crystal","crystal_red",40},
+	{"Orange Crystal - 1","crystal_orange",10},
+	{"Green Crystal - 2","crystal_green",20},
+	{"Blue Crystal - 3","crystal_blue",30},
+	{"Red Crystal - 4","crystal_red",40},
 	}
 for i in ipairs(items) do
 local des = items[i][1]
@@ -15,10 +15,10 @@ minetest.register_craftitem("mymagic:"..itm,{
 	})
 end
 local items = {
-	{"Orange Energy Orb","orb_orange",20},
-	{"Green Energy Orb","orb_green",40},
-	{"Blue Energy Orb","orb_blue",60},
-	{"Red Energy Orb","orb_red",80},
+	{"Orange Energy Orb - 1","orb_orange",20},
+	{"Green Energy Orb - 2","orb_green",40},
+	{"Blue Energy Orb - 3","orb_blue",60},
+	{"Red Energy Orb - 4","orb_red",80},
 	}
 for i in ipairs(items) do
 local des = items[i][1]
