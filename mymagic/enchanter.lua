@@ -126,25 +126,25 @@ then
 			{"mymagic_tools:knife_enchanted_"..mtr.."_green",	"blue",		"mymagic_tools:knife_enchanted_"..mtr.."_blue"},
 			{"mymagic_tools:knife_enchanted_"..mtr.."_blue",	"red",		"mymagic_tools:knife_enchanted_"..mtr.."_red"},
 
-			{"3d_armor:helmet_diamond",			"orange",	"dungeon_armor:diamond_helmet_orange"},
-			{"3d_armor:chestplate_diamond",		"orange",	"dungeon_armor:diamond_chestplate_orange"},
-			{"3d_armor:leggings_diamond",		"orange",	"dungeon_armor:diamond_leggings_orange"},
-			{"3d_armor:boots_diamond",			"orange",	"dungeon_armor:diamond_boots_orange"},
+			{"3d_armor:helmet_diamond",			"orange",	"mymagic_tools:diamond_helmet_orange"},
+			{"3d_armor:chestplate_diamond",		"orange",	"mymagic_tools:diamond_chestplate_orange"},
+			{"3d_armor:leggings_diamond",		"orange",	"mymagic_tools:diamond_leggings_orange"},
+			{"3d_armor:boots_diamond",			"orange",	"mymagic_tools:diamond_boots_orange"},
 			
-			{"dungeon_armor:diamond_helmet_orange",		"green",	"dungeon_armor:diamond_helmet_green"},
-			{"dungeon_armor:diamond_chestplate_orange",	"green",	"dungeon_armor:diamond_chestplate_green"},
-			{"dungeon_armor:diamond_leggings_orange",	"green",	"dungeon_armor:diamond_leggings_green"},
-			{"dungeon_armor:diamond_boots_orange",		"green",	"dungeon_armor:diamond_boots_green"},
+			{"mymagic_tools:diamond_helmet_orange",		"green",	"mymagic_tools:diamond_helmet_green"},
+			{"mymagic_tools:diamond_chestplate_orange",	"green",	"mymagic_tools:diamond_chestplate_green"},
+			{"mymagic_tools:diamond_leggings_orange",	"green",	"mymagic_tools:diamond_leggings_green"},
+			{"mymagic_tools:diamond_boots_orange",		"green",	"mymagic_tools:diamond_boots_green"},
 			
-			{"dungeon_armor:diamond_helmet_green",		"blue",	"dungeon_armor:diamond_helmet_blue"},
-			{"dungeon_armor:diamond_chestplate_green",	"blue",	"dungeon_armor:diamond_chestplate_blue"},
-			{"dungeon_armor:diamond_leggings_green",	"blue",	"dungeon_armor:diamond_leggings_blue"},
-			{"dungeon_armor:diamond_boots_green",		"blue",	"dungeon_armor:diamond_boots_blue"},
+			{"mymagic_tools:diamond_helmet_green",		"blue",	"mymagic_tools:diamond_helmet_blue"},
+			{"mymagic_tools:diamond_chestplate_green",	"blue",	"mymagic_tools:diamond_chestplate_blue"},
+			{"mymagic_tools:diamond_leggings_green",	"blue",	"mymagic_tools:diamond_leggings_blue"},
+			{"mymagic_tools:diamond_boots_green",		"blue",	"mymagic_tools:diamond_boots_blue"},
 			
-			{"dungeon_armor:diamond_helmet_blue",		"red",	"dungeon_armor:diamond_helmet_red"},
-			{"dungeon_armor:diamond_chestplate_blue",	"red",	"dungeon_armor:diamond_chestplate_red"},
-			{"dungeon_armor:diamond_leggings_blue",		"red",	"dungeon_armor:diamond_leggings_red"},
-			{"dungeon_armor:diamond_boots_blue",		"red",	"dungeon_armor:diamond_boots_red"},
+			{"mymagic_tools:diamond_helmet_blue",		"red",	"mymagic_tools:diamond_helmet_red"},
+			{"mymagic_tools:diamond_chestplate_blue",	"red",	"mymagic_tools:diamond_chestplate_red"},
+			{"mymagic_tools:diamond_leggings_blue",		"red",	"mymagic_tools:diamond_leggings_red"},
+			{"mymagic_tools:diamond_boots_blue",		"red",	"mymagic_tools:diamond_boots_red"},
 			}
 
 	for i in ipairs (tool_list) do

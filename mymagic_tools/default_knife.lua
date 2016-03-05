@@ -106,7 +106,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'mymagic_tools:knife_bronze',
 	recipe = {
-		{'mymagic_tools:knife_ingot'},
+		{'default:bronze_ingot'},
 		{'default:bronze_ingot'},
 		{'group:stick'},
 	}

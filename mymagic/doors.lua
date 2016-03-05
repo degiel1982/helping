@@ -141,7 +141,14 @@ minetest.override_item("mymagic:door_bottom_open2",{
 
 
 
-
+minetest.register_craft({
+	output = "mymagic:door_dungeon",
+	recipe = {
+			{"default:stonebrick","default:stonebrick","default:stonebrick"},
+			{"default:stonebrick","mymagic:orb_orange","default:stonebrick"},
+			{"default:stonebrick","default:stonebrick","default:stonebrick"},
+			},
+})
 
 
 

@@ -98,7 +98,7 @@ minetest.register_node("mymagic:colored_energy_"..col,{
 	description = "Energy Block",
 	tiles = {{name="mymagic_teleport_ani_"..col..".png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.5}}},
 --	paramtype = "light",
-	drawtype = "normal",
+	drawtype = "glasslike",
 	post_effect_color = rgb,
 	drop = "",
 	light_source = 14,
