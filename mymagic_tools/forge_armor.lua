@@ -94,8 +94,8 @@ if fields["helmet"]then
 			{"default:cactus",			"3d_armor:helmet_cactus"},
 			{"default:steel_ingot",		"3d_armor:helmet_steel"},
 			{"default:bronze_ingot",	"3d_armor:helmet_bronze"},
-			{"default:gold_ingot",		"3d_armor:helmet_diamond"},
-			{"default:diamond",			"3d_armor:helmet_gold"},
+			{"default:gold_ingot",		"3d_armor:helmet_gold"},
+			{"default:diamond",			"3d_armor:helmet_diamond"},
 			}
 	for i in ipairs (helmets) do
 		local mat = helmets[i][1]

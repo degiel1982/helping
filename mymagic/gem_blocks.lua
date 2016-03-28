@@ -8,16 +8,57 @@ local function parti(pos)
 		false, "mymagic_magic_parti.png")
 end
 
+minetest.register_node("mymagic:gem_block",{
+	description = "Gem Block",
+	tiles = {"mymagic_gem_block_orange.png^[colorize:#000000:150"},
+	light_source = 10,
+	paramtype = "light",
+	groups = {cracky = 1},
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+	--local meta = minetest.get_meta(pos)
+
+		minetest.show_formspec(placer:get_player_name(),"mymagic_fs",
+				"size[4,4;]"..
+				"image_button_exit[1,1;1,1;mymagic_crystal_orange.png;orange;]"..
+				"image_button_exit[1,2;1,1;mymagic_crystal_green.png;green;]"..
+				"image_button_exit[2,1;1,1;mymagic_crystal_blue.png;blue;]"..
+				"image_button_exit[2,2;1,1;mymagic_crystal_red.png;red;]")
+
+			minetest.register_on_player_receive_fields(function(player, mymagic_fs, fields)
+				if fields["orange"] or fields["green"] or fields["blue"] or fields["red"] then
+					if fields["orange"] then
+						minetest.remove_node(pos)
+						minetest.place_node(pos, {name = "mymagic:gem_block_orange"})
+					end
+					if fields["green"] then
+						minetest.remove_node(pos)
+						minetest.place_node(pos, {name = "mymagic:gem_block_green"})
+					end
+					if fields["blue"] then
+						minetest.remove_node(pos)
+						minetest.place_node(pos, {name = "mymagic:gem_block_blue"})
+					end
+					if fields["red"] then
+						minetest.remove_node(pos)
+						minetest.place_node(pos, {name = "mymagic:gem_block_red"})
+					end
+				end
+			end)
+	end,
+})
+
 minetest.register_node("mymagic:gem_block_orange",{
 	description = "Orange Gem Block",
 	tiles = {"mymagic_gem_block_orange.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {cracky = 1},
-	
-	on_construct = function(pos)
+	groups = {cracky = 1, not_in_creative_inventory = 1},
+
+
+	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[4,5.5;]"..
+	minetest.show_formspec(player:get_player_name(),"mymagic_orange_fs",
+		"size[4,5.5;]"..
 		"background[-0.5,-0.5;5,6.5;mymagic_gem_block_bg_orange.png]"..
 		"background[0.5,0.5;3,3;mymagic_gem_block_orange.png]"..
 		"listcolors[#cf7f00;#fb9c06;#000000]"..
@@ -28,7 +69,7 @@ minetest.register_node("mymagic:gem_block_orange",{
 	local inv = meta:get_inventory()
 		inv:set_size("orange_gem", 1)
 	end,
-	on_receive_fields = function(pos, formname, fields, sender)
+	on_receive_fields = function(pos, mymagic_orange_fs, fields, sender)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	
@@ -61,11 +102,12 @@ minetest.register_node("mymagic:gem_block_green",{
 	tiles = {"mymagic_gem_block_green.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {cracky = 1},
+	groups = {cracky = 1, not_in_creative_inventory = 1},
 	
-	on_construct = function(pos)
+	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[4,5.5;]"..
+	minetest.show_formspec(player:get_player_name(),"mymagic_green_fs",
+		"size[4,5.5;]"..
 		"background[-0.5,-0.5;5,6.5;mymagic_gem_block_bg_green.png]"..
 		"background[0.5,0.5;3,3;mymagic_gem_block_green.png]"..
 		"listcolors[#0d6601;#13a400;#000000]"..
@@ -76,7 +118,7 @@ minetest.register_node("mymagic:gem_block_green",{
 	local inv = meta:get_inventory()
 		inv:set_size("green_gem", 1)
 	end,
-	on_receive_fields = function(pos, formname, fields, sender)
+	on_receive_fields = function(pos, mymagic_green_fs, fields, sender)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	
@@ -110,11 +152,13 @@ minetest.register_node("mymagic:gem_block_blue",{
 	tiles = {"mymagic_gem_block_blue.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {cracky = 1},
+	groups = {cracky = 1, not_in_creative_inventory = 1},
 	
-	on_construct = function(pos)
+
+	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[4,5.5;]"..
+	minetest.show_formspec(player:get_player_name(),"mymagic_orange_fs",
+		"size[4,5.5;]"..
 		"background[-0.5,-0.5;5,6.5;mymagic_gem_block_bg_blue.png]"..
 		"background[0.5,0.5;3,3;mymagic_gem_block_blue.png]"..
 		"listcolors[#030f4a;#030f7b;#000000]"..
@@ -125,7 +169,7 @@ minetest.register_node("mymagic:gem_block_blue",{
 	local inv = meta:get_inventory()
 		inv:set_size("blue_gem", 1)
 	end,
-	on_receive_fields = function(pos, formname, fields, sender)
+	on_receive_fields = function(pos, mymagic_orange_fs, fields, sender)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	
@@ -153,11 +197,13 @@ minetest.register_node("mymagic:gem_block_red",{
 	tiles = {"mymagic_gem_block_red.png"},
 	light_source = 11,
 	paramtype2 = "facedir",
-	groups = {cracky = 1},
+	groups = {cracky = 1, not_in_creative_inventory = 1},
 	
-	on_construct = function(pos)
+
+	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[4,5.5;]"..
+	minetest.show_formspec(player:get_player_name(),"mymagic_red_fs",
+		"size[4,5.5;]"..
 		"background[-0.5,-0.5;5,6.5;mymagic_gem_block_bg_red.png]"..
 		"background[0.5,0.5;3,3;mymagic_gem_block_red.png]"..
 		"listcolors[#910000;#d50000;#000000]"..
@@ -168,7 +214,7 @@ minetest.register_node("mymagic:gem_block_red",{
 	local inv = meta:get_inventory()
 		inv:set_size("red_gem", 1)
 	end,
-	on_receive_fields = function(pos, formname, fields, sender)
+	on_receive_fields = function(pos, mymagic_red_fs, fields, sender)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	
