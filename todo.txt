@@ -19,6 +19,6 @@ DONE - make energy orb powder images
 
 DONE - Check mapgen for orbs and crystals - You collect them when you mine stone
 
-- make magic sword crafting table. How to get sword pieces?
+- make magic sword crafting table. How to get sword pieces? Don't bother with this for now
 
-- Label forges better
+DONE - Label forges better
