@@ -1,0 +1,22 @@
+- Make magic block schematics and have them generate underground
+
+- Get enchanting table finished/working
+
+- Get tool repair finished/working
+
+- make energy orb powder images
+
+- Do something with pick/axe/sword blocks. Maybe generate on land?
+
+- Why are there many picks in inventory and no axes or swords
+
+- What is the gem block for?
+
+- magic wands don't seem to be started besides images
+    - I think they are for special powers like speed and fly
+    
+- What nodes need crafts?
+
+- Check mapgen for orbs and crystals
+
+- make magic sword crafting table. How to get sword pieces?
