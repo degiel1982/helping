@@ -9,13 +9,19 @@ Enchantment Table
 You will need to craft an enchanting table. 
 
 t- default:torch
+
 w - default:wood
+
 s - default:stick
+
 r - mymagic:orb_red
+
 n - nothing
 
 t/r/t
+
 w/w/w
+
 s/n/s
 
 Once you craft the table you can enchant your tools and armor. You can enchant shovels, axes, swords and picks. 
