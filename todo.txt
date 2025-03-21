@@ -22,3 +22,9 @@ DONE - Check mapgen for orbs and crystals - You collect them when you mine stone
 - make magic sword crafting table. How to get sword pieces? Don't bother with this for now
 
 DONE - Label forges better
+
+- remove crafting for sword, axe and armour
+
+I am thinking that we should have magic potions for fly, speed, jump etc
+https://forum.luanti.org/viewtopic.php?t=21051
+The wands can be for turning water into ice, stone into lava, etc
