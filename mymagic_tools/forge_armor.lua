@@ -24,7 +24,7 @@ minetest.register_node("mymagic_tools:forge_armor",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 14,
-	groups = {cracky=1},
+	groups = {cracky=1,oddly_breakable_by_hand=2},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -56,8 +56,11 @@ on_construct = function(pos)
 	meta:set_string("formspec", "size[11,4;]"..
 		"background[-0.5,-0.5;12,5;mymagic_forge_bg.png]"..
 		"listcolors[#191515;#464545;#000000]"..
-		"label[0,0;Input]"..
-		"list[current_name;input;0,0.5;1,1;]"..
+		"label[0,0;wood,cactus,]"..
+		"label[0,0.25;steel,bronze,]"..
+		"label[0,0.5;gold,diamond]"..
+		"label[0,1;Input]"..
+		"list[current_name;input;0,1.5;1,1;]"..
 		"image_button[1.5,0;1,1;3d_armor_inv_helmet_diamond.png;helmet;x5]"..
 		"image_button[1.5,1;1,1;3d_armor_inv_chestplate_diamond.png;chest;x6]"..
 		"image_button[1.5,2;1,1;3d_armor_inv_leggings_diamond.png;pants;x5]"..
@@ -129,8 +132,8 @@ elseif fields["chest"]then
 			{"default:cactus",			"3d_armor:chestplate_cactus"},
 			{"default:steel_ingot",		"3d_armor:chestplate_steel"},
 			{"default:bronze_ingot",	"3d_armor:chestplate_bronze"},
-			{"default:gold_ingot",		"3d_armor:chestplate_diamond"},
-			{"default:diamond",			"3d_armor:chestplate_gold"},
+			{"default:gold_ingot",		"3d_armor:chestplate_gold"},
+			{"default:diamond",			"3d_armor:chestplate_diamond"},
 			}
 	for i in ipairs (chests) do
 		local mat = chests[i][1]
@@ -165,8 +168,8 @@ elseif fields["pants"]then
 			{"default:cactus",			"3d_armor:leggings_cactus"},
 			{"default:steel_ingot",		"3d_armor:leggings_steel"},
 			{"default:bronze_ingot",	"3d_armor:leggings_bronze"},
-			{"default:gold_ingot",		"3d_armor:leggings_diamond"},
-			{"default:diamond",			"3d_armor:leggings_gold"},
+			{"default:gold_ingot",		"3d_armor:leggings_gold"},
+			{"default:diamond",			"3d_armor:leggings_diamond"},
 			}
 	for i in ipairs (pant) do
 		local mat = pant[i][1]
@@ -200,8 +203,8 @@ elseif fields["boots"]then
 			{"default:cactus",			"3d_armor:boots_cactus"},
 			{"default:steel_ingot",		"3d_armor:boots_steel"},
 			{"default:bronze_ingot",	"3d_armor:boots_bronze"},
-			{"default:gold_ingot",		"3d_armor:boots_diamond"},
-			{"default:diamond",			"3d_armor:boots_gold"},
+			{"default:gold_ingot",		"3d_armor:boots_gold"},
+			{"default:diamond",			"3d_armor:boots_diamond"},
 			}
 	for i in ipairs (boot) do
 		local mat = boot[i][1]

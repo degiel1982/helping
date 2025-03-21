@@ -22,7 +22,7 @@ minetest.register_node("mymagic_tools:axe_forge",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 14,
-	groups = {creative_breakable=1},
+	groups = {creative_breakable=1,oddly_breakable_by_hand=2},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -47,6 +47,7 @@ on_construct = function(pos)
 		"listcolors[#191515;#464545;#000000]"..
 		--Blade
 		"label[1,1.5;Blade]"..
+		"label[1,0.5;Wood,stone,steel,bronze,mese,diamond]"..
 		"list[current_name;blade1;3,1.5;1,1;]"..
 		"list[current_name;blade2;2,1;1,1;]"..
 		"list[current_name;blade3;2,2;1,1;]"..
@@ -54,6 +55,9 @@ on_construct = function(pos)
 		"list[current_name;blade;2,4.5;1,1;]"..
 		--Handle
 		"label[4.5,1.5;Handle]"..
+		"label[7,1;Stick]"..
+		"label[7,2;Stick]"..
+		"label[7,3;Stick]"..
 		"list[current_name;handle1;6,0.5;1,1;]"..
 		"list[current_name;handle2;6,1.5;1,1;]"..
 		"list[current_name;handle3;6,2.5;1,1;]"..

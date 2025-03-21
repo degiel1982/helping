@@ -22,7 +22,8 @@ minetest.register_node("mymagic_tools:forge_sword",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 14,
-	groups = {cracky=1},
+	groups = {cracky = 2,oddly_breakable_by_hand=3},
+	sounds = default.node_sound_stone_defaults(),
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -39,6 +40,7 @@ after_place_node = function(pos, placer)
 	local meta = minetest.get_meta(pos);
 			meta:set_string("infotext",  "Sword Forge");
 end,
+
 can_dig = function(pos,player)
 	local meta = minetest.get_meta(pos);
 	local inv = meta:get_inventory()
@@ -70,6 +72,7 @@ on_construct = function(pos)
 		"listcolors[#191515;#464545;#000000]"..
 		--Blade
 		"label[1,1.5;Blade]"..
+		"label[1,0;Wood,stone,steel,bronze,mese,diamond]"..
 		"list[current_name;blade1;2,0.5;1,1;]"..
 		"list[current_name;blade2;2,1.5;1,1;]"..
 		"list[current_name;blade3;2,2.5;1,1;]"..
@@ -77,6 +80,9 @@ on_construct = function(pos)
 		"list[current_name;blade;2,4.5;1,1;]"..
 		--Handle
 		"label[4.5,1.5;Handle]"..
+		"label[7,1;Stick]"..
+		"label[7,2;Stick]"..
+		"label[7,3;Stick]"..
 		"list[current_name;handle1;6,0.5;1,1;]"..
 		"list[current_name;handle2;6,1.5;1,1;]"..
 		"list[current_name;handle3;6,2.5;1,1;]"..
@@ -234,18 +240,3 @@ minetest.register_craft({
 			{"default:steel_ingot","default:steel_ingot","default:steel_ingot"},
 			},
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
