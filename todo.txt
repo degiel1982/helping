@@ -17,6 +17,6 @@ DONE - make energy orb powder images
     
 - What nodes need crafts?
 
-- Check mapgen for orbs and crystals
+DONE - Check mapgen for orbs and crystals - You collect them when you mine stone
 
 - make magic sword crafting table. How to get sword pieces?
