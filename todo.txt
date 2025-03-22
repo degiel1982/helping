@@ -1,6 +1,6 @@
 - Make magic block schematics and have them generate underground
 
-- Get enchanting table finished/working
+DONE - Get enchanting table finished/working
 
 - Get tool repair finished/working
 
