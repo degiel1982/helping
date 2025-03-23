@@ -153,6 +153,10 @@ core.override_item("mymagic:door_dungeon", {
     -- Activate door on right-click when holding an orb.
     on_rightclick = function(pos, node, clicker, itemstack, pointed)
         if valid_orbs[clicker:get_wielded_item():get_name()] then
+            -- Remove one orb from the player's hand
+            itemstack:take_item(1)
+            clicker:set_wielded_item(itemstack)
+
             for _, p in ipairs(core.find_nodes_in_area(
                 { x = pos.x - 1, y = pos.y,   z = pos.z - 1 },
                 { x = pos.x + 1, y = pos.y + 1, z = pos.z + 1 },
