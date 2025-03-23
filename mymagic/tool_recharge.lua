@@ -58,12 +58,12 @@ local function get_formspec(countdown, msg)
     return "size[9,8]" ..
         "background[0,0;8,8;mymagic_gem_block_bg.png;true]" ..
         "listcolors[#5e4300;#936800;#000000]" ..
-        "label[0,0;Tool]" ..
-        "label[1,0;Orb]" ..
-        "list[current_name;tool;0,1;1,1;]" ..
-        "list[current_name;orb;1,1;1,1;]" ..
-        "button[2,1;1,1;button;Charge]" ..
-        "list[current_name;output;3,1;1,1;]" ..
+        "label[1,1;Tool]" ..
+        "label[2,1;Orb]" ..
+        "list[current_name;tool;1,2;1,1;]" ..
+        "list[current_name;orb;2,2;1,1;]" ..
+        "button[3,2;1,1;button;Charge]" ..
+        "list[current_name;output;4,2;1,1;]" ..
         "list[current_player;main;0.5,4;8,4;]" ..
         timer_label ..
         message_label
