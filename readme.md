@@ -1,5 +1,7 @@
 MyMagic - a mod by Don & degiel1982
 
+This is a work in progress. Once finished it should be fun!
+
 You will find gems and orbs while mining. These are use to enchant tools, armor and craft some special blocks.
 You will find 4 different color gems and orbs. Orange, Green, Blue and Red. You will need to go mining to get the orbs and gems you will need.
 
