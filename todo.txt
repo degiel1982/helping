@@ -10,7 +10,10 @@ DONE - make energy orb powder images
 
 - Why are there many picks in inventory and no axes or swords
 
-- What is the gem block for?
+- What is the gem block for? When you place it you pick the color, If you have other gem blocks they all change instead of just one
+    - When you click on activate it should remove the crystal from inventory and run code but it does not
+    - I think the idea was to have an item spawn when opened. The code says spawn a gem but there are no gems coded yet
+    - I will do gem pictures and set up the code. They can be crafting items.
 
 - magic wands don't seem to be started besides images
     - I think they are for special powers like speed and fly
@@ -24,6 +27,8 @@ DONE - Check mapgen for orbs and crystals - You collect them when you mine stone
 DONE - Label forges better
 
 - remove crafting for sword, axe and armour
+
+- make crafts for items that do not have them
 
 I am thinking that we should have magic potions for fly, speed, jump etc
 https://forum.luanti.org/viewtopic.php?t=21051
