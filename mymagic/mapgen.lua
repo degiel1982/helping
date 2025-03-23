@@ -47,5 +47,25 @@ minetest.register_ore({
 	clust_num_ores = 1,
 	clust_size     = 1,
 	height_min     = -31000,
-	height_max     = -150,
+	height_max     = -25,
+})
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "mymagic:dark_stone",
+	wherein        = "default:stone",
+	clust_scarcity = 20*20*20,
+	clust_num_ores = 1,
+	clust_size     = 1,
+	height_min     = -31000,
+	height_max     = -20,
+})
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "mymagic:dark_desert_stone",
+	wherein        = "default:stone",
+	clust_scarcity = 20*20*20,
+	clust_num_ores = 1,
+	clust_size     = 1,
+	height_min     = -31000,
+	height_max     = -1,
 })

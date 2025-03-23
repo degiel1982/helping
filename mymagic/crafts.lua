@@ -49,4 +49,33 @@ core.register_craftitem("mymagic:gem_red", {
     description = "Red Gem",
     inventory_image = "mymagic_gem_red.png"
 })
-
+--Dark Stones
+minetest.register_craft({
+		type = "cooking",
+		output = "mymagic:dark_stone",
+		recipe = "mymagic:dark_cobble",
+		cooktime = 5
+	})
+minetest.register_craft({
+		type = "cooking",
+		output = "mymagic:dark_desert_stone",
+		recipe = "mymagic:dark_desert_cobble",
+		cooktime = 5
+	})
+--Dark Stone Bricks
+minetest.register_craft({
+	output = "mymagic:dark_stone_brick 4",
+	recipe = {
+		{"mymagic:dark_stone","mymagic:dark_stone",""},
+		{"mymagic:dark_stone","mymagic:dark_stone",""},
+		{"","",""},
+	}
+})
+minetest.register_craft({
+	output = "mymagic:dark_desert_stone_brick 4",
+	recipe = {
+		{"mymagic:dark_desert_stone","mymagic:dark_desert_stone",""},
+		{"mymagic:dark_desert_stone","mymagic:dark_desert_stone",""},
+		{"","",""},
+	}
+})
