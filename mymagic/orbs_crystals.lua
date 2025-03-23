@@ -29,6 +29,10 @@ minetest.register_craftitem("mymagic:"..itm,{
 	description = des,
 	inventory_image = "mymagic_"..itm..".png",
 	})
+minetest.register_craftitem("mymagic:powder_"..itm,{
+	description = des.." Powder",
+	inventory_image = "mymagic_"..itm.."_powder.png",
+	})
 end
 minetest.override_item("default:stone",{
 	drop = {
