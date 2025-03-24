@@ -14,7 +14,7 @@ for i in ipairs (blocks) do
 	local tool = blocks[i][3]
 	local mag  = blocks[i][4]
 
-minetest.register_node("mymagic:block_"..col..tool,{
+minetest.register_node("mymagic:block_"..col.."_"..tool,{
 	description = des.." Magic block - "..tool,
 	tiles = {"mymagic_block_"..tool.."_"..col..".png"},
 --	paramtype = "light",
