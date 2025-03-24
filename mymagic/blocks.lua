@@ -17,8 +17,9 @@ for i in ipairs (blocks) do
 minetest.register_node("mymagic:block_"..col.."_"..tool,{
 	description = des.." Magic block - "..tool,
 	tiles = {"mymagic_block_"..tool.."_"..col..".png"},
---	paramtype = "light",
+	paramtype = "light",
 	drop = "",
+	light_source = 12,
 	groups = mag,
 	on_punch = function(pos, node, puncher, pointed_thing)
 		minetest.chat_send_player(puncher:get_player_name(), "You need an enchanted "..col.." "..tool.." to break this block")
@@ -107,11 +108,11 @@ minetest.register_node("mymagic:colored_energy_"..col,{
 
 })
 minetest.register_craft({
+	type = "shapeless",
 	output = "mymagic:colored_energy_"..col,
 	recipe = {
-			{"mymagic:orb_"..col,"mymagic:orb_"..col,""},
-			{"mymagic:orb_"..col,"mymagic:orb_"..col,""},
-			{"","",""}
+			"mymagic:orb_"..col,"mymagic:orb_"..col,
+			"mymagic:orb_"..col,"mymagic:orb_"..col,
 			},
 })
 end

@@ -32,23 +32,7 @@ minetest.register_craft({
 		recipe = "mymagic:orb_red",
 		cooktime = 5
 	})
---gems
-core.register_craftitem("mymagic:gem_orange", {
-    description = "Orange Gem",
-    inventory_image = "mymagic_gem_orange.png"
-})
-core.register_craftitem("mymagic:gem_green", {
-    description = "Green Gem",
-    inventory_image = "mymagic_gem_green.png"
-})
-core.register_craftitem("mymagic:gem_blue", {
-    description = "Blue Gem",
-    inventory_image = "mymagic_gem_blue.png"
-})
-core.register_craftitem("mymagic:gem_red", {
-    description = "Red Gem",
-    inventory_image = "mymagic_gem_red.png"
-})
+
 --Dark Stones
 minetest.register_craft({
 		type = "cooking",
@@ -64,18 +48,18 @@ minetest.register_craft({
 	})
 --Dark Stone Bricks
 minetest.register_craft({
+	type = "shapeless",
 	output = "mymagic:dark_stone_brick 4",
 	recipe = {
-		{"mymagic:dark_stone","mymagic:dark_stone",""},
-		{"mymagic:dark_stone","mymagic:dark_stone",""},
-		{"","",""},
+		"mymagic:dark_stone","mymagic:dark_stone",
+		"mymagic:dark_stone","mymagic:dark_stone"
 	}
 })
 minetest.register_craft({
+	type = "shapeless",
 	output = "mymagic:dark_desert_stone_brick 4",
 	recipe = {
-		{"mymagic:dark_desert_stone","mymagic:dark_desert_stone",""},
-		{"mymagic:dark_desert_stone","mymagic:dark_desert_stone",""},
-		{"","",""},
+		"mymagic:dark_desert_stone","mymagic:dark_desert_stone",
+		"mymagic:dark_desert_stone","mymagic:dark_desert_stone"
 	}
 })
