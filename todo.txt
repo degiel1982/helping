@@ -2,13 +2,13 @@
 
 DONE - Get enchanting table finished/working
 
-- Get tool repair finished/working
+Done - Get tool repair finished/working
 
 DONE - make energy orb powder images
 
-- Do something with pick/axe/sword blocks. Maybe generate on land?
+Done - I made them generate underground- Do something with pick/axe/sword blocks. Maybe generate on land?
 
-- Why are there many picks in inventory and no axes or swords
+Done - Description was commented out- Why are there many picks in inventory and no axes or swords
 
 - What is the gem block for? When you place it you pick the color, If you have other gem blocks they all change instead of just one
     - When you click on activate it should remove the crystal from inventory and run code but it does not
@@ -18,7 +18,7 @@ DONE - make energy orb powder images
 - magic wands don't seem to be started besides images
     - I think they are for special powers like speed and fly
     
-- What nodes need crafts?
+Done - - What nodes need crafts?
 
 DONE - Check mapgen for orbs and crystals - You collect them when you mine stone
 
