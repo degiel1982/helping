@@ -107,4 +107,6 @@ To make you need stonebrick aroung the outside of the crafting grid and an orang
 
 
 
-Licence - DWYWPL
+Code Licence - MIT
+
+Media Licence - CC0
