@@ -1,12 +1,3 @@
---[[
-  1. Added freeze wand (names can vary and images too)
-
-  I will add more but it took me a moment to get the placement right
-  Just test this one out first and tell me what you would like to do with this one.
-  For now it freezes water_souce in to ice.
-]]
-
--- Helper function to register a wand
 local function register_magic_wand(name, description, texture, ability_function)
     minetest.register_tool("mymagic:" .. name, {
         description = description,
@@ -16,38 +7,71 @@ local function register_magic_wand(name, description, texture, ability_function)
             full_punch_interval = 1.0,
             max_drop_level = 1,
             groupcaps = {
-                cracky = {times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 20, maxlevel = 1},
+                cracky = { times = {[1] = 2.0, [2] = 1.0, [3] = 0.50}, uses = 20, maxlevel = 1 },
             },
-            damage_groups = {fleshy = 5},
+            damage_groups = { fleshy = 5 },
         },
         on_use = ability_function,
     })
 end
 
 local function freeze_ability(itemstack, user, pointed_thing)
-    local pos
-    local ray = minetest.raycast(user:get_pos(), vector.add(user:get_pos(), vector.multiply(user:get_look_dir(), 10)), false, false)
+    -- Set the start position at the player's eye level.
+    local start_pos = vector.add(user:get_pos(), { x = 0, y = 1.5, z = 0 })
+    local direction = user:get_look_dir()
+    local ray_length = 50  -- Define how far the ray goes.
+    local end_pos = vector.add(start_pos, vector.multiply(direction, ray_length))
+    local ray = minetest.raycast(start_pos, end_pos, false, false)
 
+    -- Visualize the trajectory of the spell with a particle effect.
+    minetest.add_particle({
+        pos = start_pos,
+        velocity = vector.multiply(direction, 10),  -- Speed for visualization.
+        acceleration = { x = 0, y = 0, z = 0 },
+        expirationtime = 0.5,
+        size = 2,
+        texture = "default_snowball.png",
+    })
+
+    -- Process the raycast results.
     for pointed in ray do
         if pointed.type == "node" then
-            local node_pos = pointed.under
-            local node = minetest.get_node(node_pos)
+            -- Use pointed.above as the collision position (where the ray "hits").
+            local hit_pos = vector.round(pointed.above)
+            local distance = vector.distance(start_pos, hit_pos)
+            local delay = distance / 30 -- Delay determined by the assumed visual speed of 10 units/second.
 
-            -- Check if the node is a water source block
-            if node.name == "default:water_source" then
-                minetest.set_node(node_pos, {name = "default:ice"}) -- Replace water source with ice
-                minetest.chat_send_player(user:get_player_name(), "You froze the water into ice!")
-            else
-                minetest.chat_send_player(user:get_player_name(), "This is not a water source block!")
-            end
-            break -- End the loop once a valid node is found
+            minetest.after(delay, function()
+                local node = minetest.get_node(hit_pos)
+                if node.name == "default:water_source" then
+                    -- Freeze the hit node.
+                    minetest.set_node(hit_pos, { name = "default:ice" })
+                    minetest.chat_send_player(user:get_player_name(), "You froze the water into ice!")
+                    
+                    -- Check surrounding nodes (in a 3×3×3 cube centered on the hit point)
+                    for dx = -1, 1 do
+                        for dy = -1, 1 do
+                            for dz = -1, 1 do
+                                local surrounding_pos = vector.add(hit_pos, { x = dx, y = dy, z = dz })
+                                local surrounding_node = minetest.get_node(surrounding_pos)
+                                if surrounding_node.name == "default:water_source" then
+                                    minetest.set_node(surrounding_pos, { name = "default:ice" })
+                                end
+                            end
+                        end
+                    end
+                else
+                    minetest.chat_send_player(user:get_player_name(), "This is not a water source block!")
+                end
+            end)
+            break  -- Stop processing after the first node hit.
         end
     end
 
     return itemstack
 end
 
--- Register wands
+-- Register the freezing wand.
 register_magic_wand("freeze_wand", "Freezing Wand", "mymagic_wand_blue.png", freeze_ability)
 
 minetest.register_craft({
