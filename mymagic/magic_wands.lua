@@ -24,35 +24,24 @@ local function register_magic_wand(name, description, texture, ability_function)
     })
 end
 
--- Wand abilities
-
---Freeze
 local function freeze_ability(itemstack, user, pointed_thing)
     local pos
+    local ray = minetest.raycast(user:get_pos(), vector.add(user:get_pos(), vector.multiply(user:get_look_dir(), 10)), false, false)
 
-    if pointed_thing.type == "node" then
-        -- Get the position of the node in the negative direction of the pointed node
-        local dir = user:get_look_dir()
-        pos = vector.subtract(pointed_thing.under, vector.round(dir)) -- Move in the negative direction
-    else
-        -- If pointing at nothing, calculate the position in front of the player
-        local dir = user:get_look_dir()
-        local player_pos = user:get_pos()
-        pos = vector.add(player_pos, vector.multiply(dir, 1)) -- 2 blocks in front of the player
-    end
+    for pointed in ray do
+        if pointed.type == "node" then
+            local node_pos = pointed.under
+            local node = minetest.get_node(node_pos)
 
-    -- Round the position to ensure it aligns with the node grid
-    pos = vector.round(pos)
-
-    -- Get the node at the calculated position
-    local node = minetest.get_node(pos)
-
-    -- Check if the node is a water source block
-    if node.name == "default:water_source" then
-        minetest.set_node(pos, {name = "default:ice"}) -- Replace water source with ice
-        minetest.chat_send_player(user:get_player_name(), "You froze the water into ice!")
-    else
-        minetest.chat_send_player(user:get_player_name(), "This is not a water source block!")
+            -- Check if the node is a water source block
+            if node.name == "default:water_source" then
+                minetest.set_node(node_pos, {name = "default:ice"}) -- Replace water source with ice
+                minetest.chat_send_player(user:get_player_name(), "You froze the water into ice!")
+            else
+                minetest.chat_send_player(user:get_player_name(), "This is not a water source block!")
+            end
+            break -- End the loop once a valid node is found
+        end
     end
 
     return itemstack

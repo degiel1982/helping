@@ -1,3 +1,0 @@
-default
-mymagic
-3darmor?
