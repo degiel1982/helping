@@ -64,6 +64,13 @@ local function register_transform_wand(wand_info)
             return itemstack
         end,
     })
+    -- Register the crafting recipe
+    if wand_info.recipe then
+        core.register_craft({
+            output = "mymagic:" .. wand_info.name,
+            recipe = wand_info.recipe,
+        })
+    end
 end
 
 
@@ -79,6 +86,10 @@ local fire_wand = {
     change_to = "default:lava_source",
     ray_particle = "fire_basic_flame.png",
     node_above = false,
+    recipe = {
+        {"default:lava_source", "default:stone", "default:lava_source"},
+        {"", "default:stick", ""},
+    },
 }
 
 register_transform_wand(fire_wand)
@@ -95,6 +106,10 @@ local ice_wand = {
     change_to = "default:ice",
     ray_particle = "default_snowball.png",
     node_above = true,
+    recipe = {
+        {"default:lava_source", "default:stone", "default:lava_source"},
+        {"", "default:stick", ""},
+    },
 }
 
 register_transform_wand(ice_wand)
@@ -111,6 +126,10 @@ local glass_wand = {
     change_to = "default:glass",
     ray_particle = "default_sand.png",
     node_above = false,
+    recipe = {
+        {"default:lava_source", "default:stone", "default:lava_source"},
+        {"", "default:stick", ""},
+    },
 }
 
 register_transform_wand(glass_wand)
