@@ -9,5 +9,6 @@ dofile(minetest.get_modpath("mymagic").."/blocks_default.lua")
 dofile(minetest.get_modpath("mymagic").."/chests.lua")
 dofile(minetest.get_modpath("mymagic").."/mapgen.lua")
 dofile(minetest.get_modpath("mymagic").."/crafts.lua")
+dofile(minetest.get_modpath("mymagic").."/magic_wands.lua")
 
 
