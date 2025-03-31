@@ -128,11 +128,12 @@ end
 ]]
 local fire_wand = {
     name = "fire_wand",
-    description = "Turns stone into lava",
+    description = "Inferno's Embrace - Lava / Stone",
     texture = "mymagic_wand_red.png",
     change_from = "default:stone",
     change_to = "default:lava_source",
-    ray_particle = "fire_basic_flame.png",
+    ray_particle_on_use = "fire_basic_flame.png",
+    ray_particle_on_place = "fire_basic_flame.png",
     node_above_use = true,
     node_above_place = false,
     recipe = {
@@ -149,7 +150,7 @@ register_transform_wand(fire_wand)
 ]]
 local ice_wand = {
     name = "ice_wand",
-    description = "Turns water into ice",
+    description = "Winter's Whisper - Water / Ice",
     texture = "mymagic_wand_blue.png",
     change_from = "default:water_source",
     change_to = "default:ice",
@@ -169,8 +170,8 @@ register_transform_wand(ice_wand)
         - Transforms default:sand to default:glass
 ]]
 local glass_wand = {
-    name = "the_glassweaver",
-    description = "Turns sand into glass",
+    name = "glassweaver",
+    description = "The Glassweaver - Sand / Glass",
     texture = "mymagic_wand_orange.png",
     change_from = "default:sand",
     change_to = "default:glass",
