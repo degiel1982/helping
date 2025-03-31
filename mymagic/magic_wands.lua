@@ -18,19 +18,19 @@ local function register_transform_wand(wand_info)
         on_use = function(itemstack, user, pointed_thing)
             local start_pos = vector.add(user:get_pos(), { x = 0, y = 1.5, z = 0 })
             local direction = user:get_look_dir()
-            local ray_length = 50  -- Define how far the ray goes.
+            local ray_length = 50 
             local end_pos = vector.add(start_pos, vector.multiply(direction, ray_length))
             local ray = minetest.raycast(start_pos, end_pos, false, false)
+
             core.add_particle({
                 pos = start_pos,
-                velocity = vector.multiply(direction, 10),  -- Speed for visualization.
+                velocity = vector.multiply(direction, 10), 
                 acceleration = { x = 0, y = 0, z = 0 },
                 expirationtime = 0.5,
                 size = 2,
                 texture = wand_info.ray_particle,
             })
-        
-            -- Process the raycast results.
+
             for pointed in ray do
                 if pointed.type == "node" then
                     local hit_pos = {}
@@ -40,13 +40,11 @@ local function register_transform_wand(wand_info)
                         hit_pos = {vector.round(pointed.above)}
                     end
                     local distance = vector.distance(start_pos, hit_pos)
-                    local delay = distance / 30 -- Delay determined by the assumed visual speed of 10 units/second.
+                    local delay = distance / 30
                     core.after(delay, function()
                         local node = minetest.get_node(hit_pos)
                         if node.name == wand_info.change_from then
-                            -- Freeze the hit node.
                             minetest.set_node(hit_pos, { name = wand_info.change_to })
-                            -- Check surrounding nodes (in a 3×3×3 cube centered on the hit point)
                             for dx = -1, 1 do
                                 for dy = -1, 1 do
                                     for dz = -1, 1 do
@@ -60,7 +58,7 @@ local function register_transform_wand(wand_info)
                             end
                         end
                     end)
-                    break  -- Stop processing after the first node hit.
+                    break
                 end
             end
             return itemstack
@@ -80,24 +78,40 @@ local fire_wand = {
     change_from = "default:stone",
     change_to = "default:lava_source",
     ray_particle = "fire_basic_flame.png",
-    node_above = true,
+    node_above = false,
 }
 
 register_transform_wand(fire_wand)
 
 --[[
-    Fire Wand
-        - Transforms default:stone to default:lava_source
+    Ice Wand
+        - Transforms default:water_source to default:ice
 ]]
 local ice_wand = {
     name = "Ice Wand",
     description = "Turns water into ice",
-    texture = "mymagic_wand_red.png",
-    change_from = "default:stone",
-    change_to = "default:lava_source",
-    ray_particle = "fire_basic_flame.png",
+    texture = "mymagic_wand_blue.png",
+    change_from = "default:water_source",
+    change_to = "default:ice",
+    ray_particle = "default_snowball.png",
     node_above = true,
 }
 
-register_transform_wand(fire_wand)
+register_transform_wand(ice_wand)
+
+--[[
+    Ice Wand
+        - Transforms default:sand to default:glass
+]]
+--local ice_wand = {
+--    name = "The Glassweaver",
+--    description = "Turns sand into glass",
+--    texture = "mymagic_wand_blue.png",
+--    change_from = "default:water_source",
+--    change_to = "default:ice",
+--    ray_particle = "default_snowball.png",
+--    node_above = true,
+--}
+--
+--register_transform_wand(ice_wand)
 
