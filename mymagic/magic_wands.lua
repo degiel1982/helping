@@ -100,18 +100,18 @@ local ice_wand = {
 register_transform_wand(ice_wand)
 
 --[[
-    Ice Wand
+    The Glassweaver
         - Transforms default:sand to default:glass
 ]]
---local ice_wand = {
---    name = "The Glassweaver",
---    description = "Turns sand into glass",
---    texture = "mymagic_wand_blue.png",
---    change_from = "default:water_source",
---    change_to = "default:ice",
---    ray_particle = "default_snowball.png",
---    node_above = true,
---}
---
---register_transform_wand(ice_wand)
+local glass_wand = {
+    name = "The Glassweaver",
+    description = "Turns sand into glass",
+    texture = "mymagic_wand_orange.png",
+    change_from = "default:sand",
+    change_to = "default:glass",
+    ray_particle = "default_sand.png",
+    node_above = false,
+}
+
+register_transform_wand(glass_wand)
 
