@@ -195,7 +195,7 @@ register_transform_wand(glass_wand)
 local dirt_wand = {
     name = "meadow_maker",
     description = "The Meadow Maker - Dirt / Dirt With Grass",
-    texture = "mymagic_wand_orange.png",
+    texture = "mymagic_wand_green.png",
     change_from = "default:dirt",
     change_to = "default:dirt_with_grass",
     ray_particle_on_use = "default_dirt_with_grass.png",
