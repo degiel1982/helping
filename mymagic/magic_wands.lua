@@ -32,7 +32,7 @@ local function register_transform_wand(wand_info)
                 acceleration = { x = 0, y = 0, z = 0 },
                 expirationtime = 0.5,
                 size = 2,
-                texture = wand_info.ray_particle,
+                texture = wand_info.ray_particle_on_use,
             })
 
             for pointed in ray do
@@ -79,7 +79,7 @@ local function register_transform_wand(wand_info)
                 acceleration = { x = 0, y = 0, z = 0 },
                 expirationtime = 0.5,
                 size = 2,
-                texture = wand_info.ray_particle,
+                texture = wand_info.ray_particle_on_place,
             })
 
             for pointed in ray do
@@ -154,7 +154,8 @@ local ice_wand = {
     texture = "mymagic_wand_blue.png",
     change_from = "default:water_source",
     change_to = "default:ice",
-    ray_particle = "default_snowball.png",
+    ray_particle_on_use = "fire_basic_flame.png",
+    ray_particle_on_place = "fire_basic_flame.png",
     node_above_use = false,
     node_above_place = true,
     recipe = {
@@ -175,7 +176,8 @@ local glass_wand = {
     texture = "mymagic_wand_orange.png",
     change_from = "default:sand",
     change_to = "default:glass",
-    ray_particle = "default_sand.png",
+    ray_particle_on_use = "fire_basic_flame.png",
+    ray_particle_on_place = "fire_basic_flame.png",
     node_above_use = true,
     node_above_place = true,
     recipe = {
