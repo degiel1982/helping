@@ -132,7 +132,7 @@ local fire_wand = {
     texture = "mymagic_wand_red.png",
     change_from = "default:stone",
     change_to = "default:lava_source",
-    ray_particle_on_use = "fire_basic_flame.png",
+    ray_particle_on_use = "default_lava_source.png",
     ray_particle_on_place = "fire_basic_flame.png",
     node_above_use = true,
     node_above_place = false,
@@ -154,8 +154,8 @@ local ice_wand = {
     texture = "mymagic_wand_blue.png",
     change_from = "default:water_source",
     change_to = "default:ice",
-    ray_particle_on_use = "fire_basic_flame.png",
-    ray_particle_on_place = "fire_basic_flame.png",
+    ray_particle_on_use = "default_ice.png",
+    ray_particle_on_place = "default_water_source.png",
     node_above_use = false,
     node_above_place = true,
     recipe = {
@@ -176,8 +176,8 @@ local glass_wand = {
     texture = "mymagic_wand_orange.png",
     change_from = "default:sand",
     change_to = "default:glass",
-    ray_particle_on_use = "fire_basic_flame.png",
-    ray_particle_on_place = "fire_basic_flame.png",
+    ray_particle_on_use = "default_sand.png",
+    ray_particle_on_place = "default_glass.png",
     node_above_use = true,
     node_above_place = true,
     recipe = {
@@ -188,3 +188,24 @@ local glass_wand = {
 
 register_transform_wand(glass_wand)
 
+--[[
+    The Meadow Maker
+        - Transforms default:dirt to default:dirt_with_grass
+]]
+local dirt_wand = {
+    name = "meadow_maker",
+    description = "The Meadow Maker - Dirt / Dirt With Grass",
+    texture = "mymagic_wand_green.png",
+    change_from = "default:dirt",
+    change_to = "default:dirt_with_grass",
+    ray_particle_on_use = "default_dirt_with_grass.png",
+    ray_particle_on_place = "default_dirt.png",
+    node_above_use = true,
+    node_above_place = true,
+    recipe = {
+        {"default:lava_source", "default:stone", "default:lava_source"},
+        {"", "default:stick", ""},
+    },
+}
+
+register_transform_wand(dirt_wand)
